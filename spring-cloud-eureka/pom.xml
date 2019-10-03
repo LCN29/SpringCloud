@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <!--spring boot 版本依赖-->
+    <!-- 手动引入 spring boot 版本依赖-->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -17,7 +17,7 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
 
-    <!--子模块-->
+    <!-- 子模块 由程序自动生成的, 不用手动引入-->
     <modules>
         <module>eureka-server-one</module>
     </modules>
@@ -25,13 +25,13 @@
     <properties>
         <!-- jdk 的版本  -->
         <java.version>1.8</java.version>
-        <!--spring cloud 的版本 -->
+        <!-- 手动配置 spring cloud 的版本 -->
         <spring.cloud.version>Greenwich.SR1</spring.cloud.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
-            <!-- spring cloud 对应的配置 -->
+            <!-- 手动引入 spring cloud 对应的配置 -->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
@@ -43,6 +43,11 @@
     </dependencyManagement>
 
     <build>
+        <!--
+            下面的三个插件 可以根据你的需要进行选择, 如果你项目需要打包的话
+             如果你的项目需要打包成 .jar 的话, spring boot 的打包插件就必须引入
+             如果只是单纯的在 编辑器 里面进行运行的话, 也可以不引人
+          -->
         <plugins>
             <plugin>
                 <!-- spring boot 打包插件-->
