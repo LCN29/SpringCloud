@@ -20,6 +20,9 @@
     <!-- 子模块 由程序自动生成的, 不用手动引入-->
     <modules>
         <module>eureka-server-one</module>
+        <module>eureka-client-one</module>
+        <module>eureka-client-two</module>
+        <module>eureka-server-two</module>
     </modules>
 
     <properties>
@@ -41,6 +44,14 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <!-- 手动引入 spring cloud 的基础模块, 因为是基础模块, 所有的子模块都需要用到 所以直接声明在父pom中国 -->
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter</artifactId>
+        </dependency>
+    </dependencies>
 
     <build>
         <!--

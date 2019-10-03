@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: eureka-client-two
+
+# 修改端口, 防止和服务端端口冲突
+server:
+  port: 9091
+
+eureka:
+  client:
+    service-url:
+      # 向服务端的注册地址
+      defaultZone: http://localhost:8080/eureka/

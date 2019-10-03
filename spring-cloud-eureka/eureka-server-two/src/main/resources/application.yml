@@ -3,16 +3,15 @@ spring:
     name: eureka-server
 
 server:
-  port: 8081
+  port: 8082
 
 eureka:
   instance:
-    hostname: eureka-8081.com
+    # 当前服务的域名
+    hostname: eureka-8082.com
+    # 实例的名字，上面的applicationName可以看出一个组，而这里是说明当前的服务是组中的哪一个
     instance-id: ${spring.application.name}:${server.port}
   client:
     service-url:
       # 向另外一个服务端注册自己，如果有多个服务端，通过逗号分隔就行了
-      defaultZone: http://eureka-8082.com:8082/eureka/
-
-
-
+      defaultZone: http://eureka-8081.com:8081/eureka/

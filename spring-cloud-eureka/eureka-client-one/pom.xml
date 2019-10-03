@@ -9,15 +9,24 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>eureka-server-one</artifactId>
-    <name>eureka-server-one</name>
+    <artifactId>eureka-client-one</artifactId>
+
+    <name>eureka-client-one</name>
     <url>http://www.example.com</url>
 
     <dependencies>
-        <!-- eureka 服务端的依赖-->
+        <!-- eureka 客户端-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
+
+        <!-- web 功能的支持 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
     </dependencies>
+
 </project>
