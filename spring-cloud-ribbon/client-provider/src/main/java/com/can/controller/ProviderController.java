@@ -15,9 +15,8 @@ public class ProviderController {
 
     @GetMapping("/hello")
     public String hello(HttpServletRequest request) {
-        //request.getC
+        //打印请求的地址
         String resp = " 当前响应来自于" + request.getRequestURL();
         return resp;
     }
-
 }
