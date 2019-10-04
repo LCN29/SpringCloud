@@ -10,4 +10,4 @@ eureka:
   client:
     service-url:
       # 向服务端的注册地址
-      defaultZone: http://localhost:8080/eureka/
+      defaultZone: http://eureka-8081.com:8081/eureka/,http://eureka-8082.com:8082/eureka
