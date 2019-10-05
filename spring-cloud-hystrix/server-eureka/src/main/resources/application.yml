@@ -1,0 +1,8 @@
+# eureka 服务端的通用配置
+spring:
+  application:
+    name: server-eureka
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${server.port}

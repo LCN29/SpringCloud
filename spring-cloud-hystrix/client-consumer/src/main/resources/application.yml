@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: client-consumer
+server:
+  port: 10101
+
+ribbon:
+  eureka:
+    enabled: true
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${server.port}
+  client:
+    service-url:
+      # 向服务端的注册地址
+      defaultZone: http://eureka-8081.com:8081/eureka/,http://eureka-8082.com:8082/eureka
+
+feign:
+  hystrix:
+    # 开启熔断器功能
+    enabled: true
+
+hystrix:
+  command:
+    # 默认配置， 如果想只针对某个类的某个方法 可以把 default 改为 接口类#接口方法() 的格式
+    default:
+      execution:
+        isolation:
+          thread:
+            # 熔断器超时时间，默认：1000/毫秒
+            timeoutInMilliseconds: 10000
+      circuitBreaker:
+        # hystrix 触发 熔断的要求： 1： 10s内有20个请求，2这些请求错误率达到了50%以上
+        # 这个参数修改了第一个要求的20个变为 3个
+        requestVolumnThreshold: 3
