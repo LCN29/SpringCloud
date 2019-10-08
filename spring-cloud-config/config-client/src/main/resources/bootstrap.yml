@@ -1,0 +1,20 @@
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${server.port}
+  client:
+    service-url:
+      # 向服务端的注册地址
+      defaultZone: http://eureka-8081.com:8081/eureka/,http://eureka-8082.com:8082/eureka
+
+spring:
+  cloud:
+    config:
+      name: config
+      profile: dev
+      label: master
+      discovery:
+        # Config服务发现支持
+        enabled: true
+        # config server的应用名
+        serviceId: spring-cloud-config-server

@@ -1,26 +1,19 @@
 package com.can;
 
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-
-import java.util.LinkedList;
-import java.util.List;
 
 /**
  * @description:
  * @author: LCN
- * @date: 2019-10-06 11:12
+ * @date: 2019-10-08 10:52
  */
+
 @EnableEurekaClient
 @SpringBootApplication
-public class GatewayService {
-    
+public class ConfigClient {
     public static void main(String[] args) {
-
-        List<String> list = new LinkedList<>();
-        list.add("1");
-
-        //SpringApplication.run(GatewayService.class, args);
-
+        SpringApplication.run(ConfigClient.class, args);
     }
 }

@@ -1,0 +1,9 @@
+# eureka 服务端 1 的配置
+server:
+  port: 8082
+eureka:
+  instance:
+    hostname: eureka-8082.com
+  client:
+    service-url:
+      defaultZone: http://eureka-8081.com:8081/eureka/

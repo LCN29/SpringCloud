@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: spring-cloud-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/LCN29/spring-cloud-config
+          # 指定某个目录
+          search-paths: /application-config
+          username: LCN29
+          password: GitHub的密码
+
+  rabbitmq:
+    host: rabbitMq的服务器Ip
+    port: 端口
+    username: 用户名
+    password: 密码
+
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${server.port}
+  client:
+    service-url:
+      # 向服务端的注册地址
+      defaultZone: http://eureka-8081.com:8081/eureka/,http://eureka-8082.com:8082/eureka
