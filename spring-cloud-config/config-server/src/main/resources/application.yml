@@ -9,13 +9,16 @@ spring:
           # 指定某个目录
           search-paths: /application-config
           username: LCN29
-          password: GitHub的密码
-
+          password: GitHub的登录密码
+    bus:
+      enabled: true
+      trace:
+        enabled: true
   rabbitmq:
-    host: rabbitMq的服务器Ip
-    port: 端口
-    username: 用户名
-    password: 密码
+    host: rabbitMq的地址
+    port: rabbitMq的端口
+    username: rabbitMq用户名
+    password: rabbitMq密码
 
 eureka:
   instance:
@@ -24,3 +27,9 @@ eureka:
     service-url:
       # 向服务端的注册地址
       defaultZone: http://eureka-8081.com:8081/eureka/,http://eureka-8082.com:8082/eureka
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: bus-refresh

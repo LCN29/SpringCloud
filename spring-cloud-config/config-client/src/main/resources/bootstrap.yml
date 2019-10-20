@@ -18,3 +18,12 @@ spring:
         enabled: true
         # config server的应用名
         serviceId: spring-cloud-config-server
+    bus:
+      enabled: true
+      trace:
+        enabled: true
+  rabbitmq:
+    host: rabbitMq的地址
+    port: rabbitMq的端口
+    username: rabbitMq用户名
+    password: rabbitMq密码

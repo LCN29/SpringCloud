@@ -1,7 +1,6 @@
 
-server:
-  port: 9091
-
 spring:
   application:
     name: spring-cloud-config-client
+
+# 暴露所有的端点 management.security.enabled=false 在 spring boot 2.0 版本以上已过期
