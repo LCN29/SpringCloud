@@ -29,7 +29,7 @@
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
 
-        <!-- 负载均衡 -->
+        <!-- 负载均衡, feign自身已经集成了 ribbon 功能, 所以这里是可以不用引用的-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
